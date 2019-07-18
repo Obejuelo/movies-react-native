@@ -5,6 +5,7 @@ import SwipeCard from '../components/SwipeCard';
 import GetSection from '../components/GetSection';
 
 import {getMovies} from '../utils/keys';
+import GetSeason from '../components/GetSeason';
 
 class HomePage extends Component {
     state = {
@@ -22,30 +23,40 @@ class HomePage extends Component {
     }
 
     render() {
+        const {navigation} = this.props
         return (
             <View style={styles.container}>
-                <AppBar title='Movies'/>
+                <AppBar title='Películas'/>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.swipecard}>
                         <SwipeCard 
                             movies={this.state.movies}
-                            navigation={this.props.navigation}/>
+                            navigation={navigation}/>
                     </View>
                     <GetSection 
-                        navigation={this.props.navigation}
-                        title='Populars'
-                        option='movie'
+                        navigation={navigation}
+                        title='Películas populares'
                         section='popular'/>
                     <GetSection 
-                        navigation={this.props.navigation}
-                        title='Top Rated'
-                        option='movie'
+                        navigation={navigation}
+                        title='Películas mejor valoradas'
                         section='top_rated'/>
                     <GetSection 
-                        navigation={this.props.navigation}
-                        title='Upcoming'
-                        option='movie'
+                        navigation={navigation}
+                        title='Proximamente'
                         section='upcoming'/>
+                    <GetSeason 
+                        navigation={navigation}
+                        title='Series en emisión'
+                        section='on_the_air'/>
+                    <GetSeason 
+                        navigation={navigation}
+                        title='Series populares'
+                        section='popular'/>
+                    <GetSeason 
+                        navigation={navigation}
+                        title='Series mejor valoradas'
+                        section='top_rated'/>
                 </ScrollView>
             </View>
         );

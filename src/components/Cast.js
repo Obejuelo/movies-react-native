@@ -15,6 +15,7 @@ _keyExtractor = (item, index) => item.id.toString()
 const Cast = ({cast}) => (
     <View style={styles.container}>
         <FlatList
+            showsHorizontalScrollIndicator={false}
             horizontal
             keyExtractor={this._keyExtractor}
             data={cast}

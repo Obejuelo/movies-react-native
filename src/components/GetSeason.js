@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {Spinner} from 'native-base';
-import CardImage from './CardMovie';
+import CardSeason from './CardSeason';
 
-import {getMovies} from '../utils/keys';
+import {getSerie} from '../utils/keys';
 
-class GetSection extends Component {
+class GetSeason extends Component {
     state = {
         movies: []
     }
 
     componentWillMount() {
         const {section} = this.props
-        getMovies(section, 'es-ES')
+        getSerie(section, 'es-ES')
             .then(data => {
                 this.setState({movies: data.results})
             })
@@ -28,14 +28,14 @@ class GetSection extends Component {
                     <Text style={styles.text}>{title}</Text>
                 </View>
                 <View style={styles.movies}>
-                    {this.state.movies.length === 0 
+                {this.state.movies.length === 0 
                     ? <Spinner color='#004c8c'/>
                     : <FlatList
                         showsHorizontalScrollIndicator={false}
                         horizontal
                         data={this.state.movies}
                         keyExtractor={this._keyExtractor}
-                        renderItem={({item}) => <CardImage navigation={navigation} movie={item}/>}/>}
+                        renderItem={({item}) => <CardSeason navigation={navigation} movie={item}/>}/>}
                 </View>
             </View>
         );
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
     }
 })
  
-export default GetSection;
+export default GetSeason;

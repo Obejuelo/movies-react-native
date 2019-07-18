@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import {Icon} from 'native-base';
 
-const MovieInfo = ({movie}) => {
+const SeasonInfo = ({movie}) => {
     const title = movie.name
     const subtitle = movie.original_name
     const titleSub = movie.name.substr(0, 27)
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MovieInfo
+export default SeasonInfo

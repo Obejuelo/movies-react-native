@@ -25,6 +25,7 @@ const Similars = ({title, movies, changeMovie}) => (
         </View>
         <View style={styles.movies}>
             <FlatList
+                showsHorizontalScrollIndicator={false}
                 horizontal
                 data={movies}
                 keyExtractor={this._keyExtractor}

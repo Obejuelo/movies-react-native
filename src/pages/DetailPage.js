@@ -76,7 +76,7 @@ class DetailPage extends Component {
             </Button>
             <Text style={{ textAlign: 'center', color: '#FFF' }}>{this.state.movie.title}</Text>
             <Button transparent onPress={()=>this.props.navigation.goBack()}>
-                <Icon style={styles.icon} name='menu' />
+                <Icon style={styles.icon} name='' />
             </Button>
         </View>
     );

@@ -1,4 +1,4 @@
-// const key = 'ff95d80756471c49faed37afeef18a5d'
+const key = 'ff95d80756471c49faed37afeef18a5d'
 
 const getMovies = async (section, lang) => {
     const key = 'ff95d80756471c49faed37afeef18a5d' //Paste your api key

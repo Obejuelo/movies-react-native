@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {View, Text, StyleSheet, Dimensions, Platform} from 'react-native';
 import CollapsibleToolbar from 'react-native-collapsible-toolbar';
 import {Button, Icon} from 'native-base';
-import MovieInfo from '../components/MovieInfo';
 import Cast from '../components/Cast';
 import {key} from '../utils/keys';
 import Similars from '../components/Similars';
+import SeasonInfo from '../components/SeasonInfo';
 
 var width = Dimensions.get('window').width
 
@@ -60,7 +60,7 @@ class DetailSeason extends Component {
 
     renderContent = () => (
         <View>
-            <MovieInfo movie={this.state.movie}/>
+            <SeasonInfo movie={this.state.movie}/>
             <Cast cast={this.state.cast}/>
             <Similars 
                 title='Similars'
@@ -76,7 +76,7 @@ class DetailSeason extends Component {
             </Button>
             <Text style={{ textAlign: 'center', color: '#FFF' }}>{this.state.movie.title}</Text>
             <Button transparent onPress={()=>this.props.navigation.goBack()}>
-                <Icon style={styles.icon} name='menu' />
+                <Icon style={styles.icon} name='' />
             </Button>
         </View>
     );
